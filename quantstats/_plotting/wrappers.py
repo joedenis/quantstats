@@ -400,6 +400,8 @@ def histogram(returns, resample='M', fontname='Arial',
         title = "Quarterly "
     elif resample == 'A':
         title = "Annual "
+    elif resample == 'D':
+        title = "Daily"
     else:
         title = ""
 
