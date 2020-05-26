@@ -116,12 +116,13 @@ def html_jd(returns, benchmark=None, rf=0.,
                        show=False, ylabel=False, cumulative=compounded)
         tpl = tpl.replace('{{vol_returns}}', figfile.getvalue().decode())
 
-    figfile = _utils._file_stream()
-    _plots.yearly_returns(returns, benchmark, grayscale=grayscale,
-                          figsize=(8, 4), subtitle=False,
-                          savefig={'fname': figfile, 'format': 'svg'},
-                          show=False, ylabel=False, compounded=compounded)
-    tpl = tpl.replace('{{eoy_returns}}', figfile.getvalue().decode())
+    # REMOVE THE RETURNS PER YEAR BAR
+    # figfile = _utils._file_stream()
+    # _plots.yearly_returns(returns, benchmark, grayscale=grayscale,
+    #                       figsize=(8, 4), subtitle=False,
+    #                       savefig={'fname': figfile, 'format': 'svg'},
+    #                       show=False, ylabel=False, compounded=compounded)
+    # tpl = tpl.replace('{{eoy_returns}}', figfile.getvalue().decode())
 
     figfile = _utils._file_stream()
     _plots.histogram(returns, resample='D',grayscale=grayscale,

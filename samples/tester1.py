@@ -1,6 +1,6 @@
 """
 
-We modified the html tearsheet to have a distribution of daily returns
+We modified the tearsheet to have a distribution of daily returns
 
 _plots.histogram(returns, resample='D', ...)
 
@@ -56,6 +56,34 @@ def run(filename="PRAESCIRE19.csv", title="Praescire ytd20"):
 		output="/home/joe/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
 	)
 
+def praescire_all_time(filename="all_praescire.csv", title= "Praescire"):
+
+	qs.extend_pandas()
+	praescire = get_series("/home/joe/PycharmProjects/quantstats_git/quantstats/data/" + filename)
+
+	# fetch the daily returns for a stock
+	# stock = qs.utils.download_returns('FB')
+
+	stock = praescire
+	# show sharpe ratio
+	qs.stats.sharpe(stock)
+
+	# or using extend_pandas() :)
+	stock.sharpe()
+
+	# qs.plots.snapshot(
+	# stock, title='Facebook Performance', savefig="/home/joe/PycharmProjects/quantstats/savedcharts/fb.png")
+
+	# qs.reports.html(
+	# 	stock, benchmark="SPY", output="/home/joe/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html")
+
+	qs.reports.html(
+		stock, benchmark=None, title=title,
+		output="/home/joe/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
+	)
+
+
 
 if __name__ == "__main__":
-	run(filename="PRAESCIRE20.csv")
+	# run(filename="PRAESCIRE20.csv")
+	praescire_all_time()
