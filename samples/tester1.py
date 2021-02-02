@@ -85,5 +85,5 @@ def praescire_all_time(filename="all_praescire.csv", title= "Praescire"):
 
 
 if __name__ == "__main__":
-	run(filename="PRAESCIRE21.csv", title="Praescire ytd21")
+	run(filename="PRAESCIRE21.csv", title="Praescire ytd")
 	# praescire_all_time()
