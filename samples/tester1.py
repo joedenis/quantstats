@@ -30,7 +30,7 @@ def run(filename="PRAESCIRE19.csv", title="Praescire ytd20"):
 	qs.extend_pandas()
 
 	# get praescires returns as a series
-	praescire19 = get_series("/home/joe/PycharmProjects/quantstats_git/quantstats/data/" + filename)
+	praescire19 = get_series("/Users/joedenis/PycharmProjects/quantstats_git/quantstats/data/" + filename)
 
 	# fetch the daily returns for a stock
 	# stock = qs.utils.download_returns('FB')
@@ -43,26 +43,26 @@ def run(filename="PRAESCIRE19.csv", title="Praescire ytd20"):
 	stock.sharpe()
 
 	# qs.plots.snapshot(
-	# stock, title='Facebook Performance', savefig="/home/joe/PycharmProjects/quantstats/savedcharts/fb.png")
+	# stock, title='Facebook Performance', savefig="/Users/joedenis/PycharmProjects/quantstats/savedcharts/fb.png")
 
 	# qs.reports.html(
 	# 	stock,
 	# 	benchmark="SPY",
-	# 	output="/home/joe/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
+	# 	output="/Users/joedenis/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
 	# )
 
 	qs.reports.html_jd(
 		stock,
 		benchmark=None,
 		title=title + filename[-6:-4],
-		output="/home/joe/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
+		output="/Users/joedenis/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
 	)
 
 
 def praescire_all_time(filename="all_praescire.csv", title="Praescire"):
 
 	qs.extend_pandas()
-	praescire = get_series("/home/joe/PycharmProjects/quantstats_git/quantstats/data/" + filename)
+	praescire = get_series("/Users/joedenis/PycharmProjects/quantstats_git/quantstats/data/" + filename)
 
 	# fetch the daily returns for a stock
 	# stock = qs.utils.download_returns('FB')
@@ -75,17 +75,17 @@ def praescire_all_time(filename="all_praescire.csv", title="Praescire"):
 	stock.sharpe()
 
 	# qs.plots.snapshot(
-	# stock, title='Facebook Performance', savefig="/home/joe/PycharmProjects/quantstats/savedcharts/fb.png")
+	# stock, title='Facebook Performance', savefig="/Users/joedenis/PycharmProjects/quantstats/savedcharts/fb.png")
 
 	# qs.reports.html(
 	# 	stock,
 	# 	benchmark="SPY",
-	# 	output="/home/joe/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
+	# 	output="/Users/joedenis/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
 	# )
 
 	qs.reports.html(
 		stock, benchmark=None, title=title,
-		output="/home/joe/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
+		output="/Users/joedenis/PycharmProjects/quantstats_git/quantstats/savedcharts/" + filename[:-4] + ".html"
 	)
 
 

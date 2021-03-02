@@ -11,7 +11,7 @@ def read_excel_file(path=Path.home().joinpath('Dropbox', 'praescire_database', '
 	all_data['Adj Close'] = all_data['Close']
 	print(all_data)
 
-	all_data.to_csv(Path("/home/joe/PycharmProjects/quantstats_git/quantstats/data/all_praescire.csv"), index=False)
+	all_data.to_csv(Path("/Users/joedenis/PycharmProjects/quantstats_git/quantstats/data/all_praescire.csv"), index=False)
 
 if __name__ == "__main__":
 	read_excel_file()
